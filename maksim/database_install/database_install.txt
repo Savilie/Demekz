@@ -1,0 +1,35 @@
+
+# УСТАНОВКА БД "ЧитайГород" (MySQL)
+
+1. Создать БД и таблицы:
+   source C:/Users/danya/Downloads/Dem/create_db.sql
+
+2. Наполнить данными:
+   source C:/Users/danya/Downloads/Dem/insert_data.sql
+
+3. Чтобы в cmd не было кракозябр — подключаться так:
+   mysql -u root -p --default-character-set=utf8
+
+4. Проверка:
+   USE chitaigorod;
+   SELECT * FROM orders;
+
+# Файлы проекта
+create_db.sql     — создание БД + таблиц
+insert_data.sql   — наполнение данными 
+
+
+chitaigorod_dump.sql - дамп всей бд если понадобится
+│             Заливка:                                                                                                 │
+│             вунтри cmd                                                                                               │
+│             "C:\Program Files\MySQL\MySQL Server 8.2\bin\mysql" -u root -p --default-character-set=utf8              │
+│             (путь к mysql, если mysql из терминала не ворк)                                                          │  
+│                                                                                                                      │
+│                                                                                                                      │
+│             А внутри mysql:                                                                                          │
+│                                                                                                                      │
+│             CREATE DATABASE IF NOT EXISTS chitaigorod CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;              │
+│             USE chitaigorod;                                                                                         │
+│             source C:/Users/danya/Downloads/Dem/chitaigorod_dump.sql                                                 │
+
+
